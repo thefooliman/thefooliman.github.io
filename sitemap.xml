@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thefooliman.github.io/2025/05/23/My-Thoughts-on-Room-Temperature-Superconductivity/</loc>
+    
+    <lastmod>2025-05-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thefooliman.github.io/2025/05/10/Why-I-Started-This-Blog/</loc>
     
     <lastmod>2025-05-10</lastmod>
@@ -13,7 +22,7 @@
 
   <url>
     <loc>https://thefooliman.github.io/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-23</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -21,28 +30,35 @@
   
   <url>
     <loc>https://thefooliman.github.io/tags/introduction/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/personal/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/computer-science/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/physics/</loc>
-    <lastmod>2025-05-11</lastmod>
+    <lastmod>2025-05-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/Room-Temperature-Superconductivity/</loc>
+    <lastmod>2025-05-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
