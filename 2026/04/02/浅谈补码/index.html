@@ -21,25 +21,20 @@
     var CONFIG = {"hostname":"thefooliman.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="A curious student&#39;s journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="The Fools&#39; Journey">
-<meta property="og:url" content="https://thefooliman.github.io/archives/index.html">
+  <meta name="description" content="​	想写一个很有意思的话题, 补码. ​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了. ​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径. ​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浅谈补码">
+<meta property="og:url" content="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/index.html">
 <meta property="og:site_name" content="The Fools&#39; Journey">
-<meta property="og:description" content="A curious student&#39;s journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+<meta property="og:description" content="​	想写一个很有意思的话题, 补码. ​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了. ​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径. ​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2026-04-02T19:41:21.000Z">
+<meta property="article:modified_time" content="2026-04-02T20:00:32.981Z">
 <meta property="article:author" content="thefooliman">
-<meta property="article:tag" content="computer science">
-<meta property="article:tag" content="physics">
-<meta property="article:tag" content="coding">
-<meta property="article:tag" content="simulations">
-<meta property="article:tag" content="learning">
-<meta property="article:tag" content="technology">
-<meta property="article:tag" content="the fool&#39;s journey">
-<meta property="article:tag" content="personal blog">
+<meta property="article:tag" content="coding, binary">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://thefooliman.github.io/archives/">
+<link rel="canonical" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
 
 
 <script id="page-configurations">
@@ -47,12 +42,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'en'
   };
 </script>
 
-  <title>Archive | The Fools' Journey</title>
+  <title>浅谈补码 | The Fools' Journey</title>
   
 
 
@@ -151,113 +146,88 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content post posts-expand">
             
 
+    
   
   
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">Um..! 4 posts in total. Keep on posting.</span>
-      </div>
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="thefooliman">
+      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Fools' Journey">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          浅谈补码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-04-02 21:41:21 / Modified: 22:00:32" itemprop="dateCreated datePublished" datetime="2026-04-02T21:41:21+02:00">2026-04-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    <div class="collection-year">
-      <span class="collection-header">2026</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-02T21:41:21+02:00"
-              content="2026-04-02">
-          04-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/" itemprop="url">
-            <span itemprop="name">浅谈补码</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2026-04-01T15:58:57+02:00"
-              content="2026-04-01">
-          04-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2026/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1vibe-coding%E7%BB%8F%E5%8E%86/" itemprop="url">
-            <span itemprop="name">我的第一次vibe coding经历</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-    <div class="collection-year">
-      <span class="collection-header">2025</span>
-    </div>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-05-23T19:53:28+02:00"
-              content="2025-05-23">
-          05-23
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/23/My-Thoughts-on-Room-Temperature-Superconductivity/" itemprop="url">
-            <span itemprop="name">My Thoughts on Room-Temperature Superconductivity</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2025-05-10T13:18:41+02:00"
-              content="2025-05-10">
-          05-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2025/05/10/Why-I-Started-This-Blog/" itemprop="url">
-            <span itemprop="name">Why I Started This Blog</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
+        <p>​	想写一个很有意思的话题, 补码.</p>
+<p>​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了.</p>
+<p>​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径.</p>
+<p>​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理加法逻辑, 甚至会造出+0和-0这对双生子. 从现在看来, 或许有时候会想骂一下脑子有泡的原码设计者, 为什么要设计这一个无用的编码方式. 不过想来, 比起1111 1101, 还是1000 0011更加可爱一点.</p>
+<p>​	在韩顺平的java课程中, 我记得韩顺平老师也引入了反码的概念, 先把原码转换成反码, 再把反码转换成补码, 不过《深入理解计算机系统》的视频课程里, 好像没有提到这一点.</p>
+<p>​	我很感叹补码的巧妙, 补码的关键就在于”补“, 就如同一个时钟, 我想从三点拨到两点, 当然可以直接逆时针拨一个小时. 可如果被禁止逆时针拨指针, 也可以顺时针拨十一个小时, 理论上来说会变成十四点, 但是时间超过十二点, 就“爆掉了”, 还是能得到两点. </p>
+<p>​	因此补码运算时, 两个补码相加, 最高溢出的位被巧妙的扔掉了. </p>
+<p>​	这在数学上应该是叫模运算吧. 时钟里, 模是12. 补码里, 对于一个字节, 模是256. </p>
+<p>​	有时也真是感叹, 计算机, 一个完全由人类自己缔造的学问, 竟然如此的精密又广博. </p>
 
     </div>
-  </div>
-  
-  
-  
 
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/coding-binary/" rel="tag"># coding, binary</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1vibe-coding%E7%BB%8F%E5%8E%86/" rel="prev" title="我的第一次vibe coding经历">
+      <i class="fa fa-chevron-left"></i> 我的第一次vibe coding经历
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
 

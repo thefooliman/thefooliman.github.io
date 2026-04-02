@@ -157,6 +157,73 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="thefooliman">
+      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Fools' Journey">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">浅谈补码</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-04-02 21:41:21 / Modified: 22:00:32" itemprop="dateCreated datePublished" datetime="2026-04-02T21:41:21+02:00">2026-04-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>​	想写一个很有意思的话题, 补码.</p>
+<p>​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了.</p>
+<p>​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径.</p>
+<p>​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理加法逻辑, 甚至会造出+0和-0这对双生子. 从现在看来, 或许有时候会想骂一下脑子有泡的原码设计者, 为什么要设计这一个无用的编码方式. 不过想来, 比起1111 1101, 还是1000 0011更加可爱一点.</p>
+<p>​	在韩顺平的java课程中, 我记得韩顺平老师也引入了反码的概念, 先把原码转换成反码, 再把反码转换成补码, 不过《深入理解计算机系统》的视频课程里, 好像没有提到这一点.</p>
+<p>​	我很感叹补码的巧妙, 补码的关键就在于”补“, 就如同一个时钟, 我想从三点拨到两点, 当然可以直接逆时针拨一个小时. 可如果被禁止逆时针拨指针, 也可以顺时针拨十一个小时, 理论上来说会变成十四点, 但是时间超过十二点, 就“爆掉了”, 还是能得到两点. </p>
+<p>​	因此补码运算时, 两个补码相加, 最高溢出的位被巧妙的扔掉了. </p>
+<p>​	这在数学上应该是叫模运算吧. 时钟里, 模是12. 补码里, 对于一个字节, 模是256. </p>
+<p>​	有时也真是感叹, 计算机, 一个完全由人类自己缔造的学问, 竟然如此的精密又广博. </p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1vibe-coding%E7%BB%8F%E5%8E%86/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -461,12 +528,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">4</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
