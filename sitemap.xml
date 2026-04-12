@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thefooliman.github.io/2026/04/12/%E6%B5%85%E8%B0%88ai%E7%9A%84%E2%80%9C%E5%85%88%E5%85%A5%E4%B8%BA%E4%B8%BB%E2%80%9C%E6%80%A7/</loc>
+    
+    <lastmod>2026-04-12</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thefooliman.github.io/2026/04/03/%E6%88%91%E7%9A%84%E4%BA%BA%E7%94%9F%E8%A7%82/</loc>
     
     <lastmod>2026-04-03</lastmod>
@@ -49,64 +58,71 @@
 
   <url>
     <loc>https://thefooliman.github.io/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://thefooliman.github.io/tags/Room-Temperature-Superconductivity/</loc>
-    <lastmod>2026-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://thefooliman.github.io/tags/introduction/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/personal/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/computer-science/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/physics/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94-life/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <loc>https://thefooliman.github.io/tags/ai-technology/</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/coding-binary/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2026-04-03</lastmod>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94-life/</loc>
+    <lastmod>2026-04-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/Room-Temperature-Superconductivity/</loc>
+    <lastmod>2026-04-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
