@@ -21,20 +21,20 @@
     var CONFIG = {"hostname":"thefooliman.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
-  <meta name="description" content="​	想写一个很有意思的话题, 补码. ​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了. ​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径. ​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理">
+  <meta name="description" content="​	这篇主要是一些设想, 实际意义较差, 写个乐呵. ​	先从一个问题开始吧. 假如现在有一个从出生开始就没见过光的盲人, 但是他的想象力非常丰富, 现在你的任务是让他知道颜色这个概念, 就最简单的黑色白色. 可是无论你怎么描述, 他都无法理解你说的是什么.  ​	我们为什么指着天空说天空好蓝指着草地说草地好绿, 是因为我们见过天空和草地, 见过他们的光反射到眼睛里, 有了这个经验. ​	同时还接">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浅谈补码">
-<meta property="og:url" content="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/index.html">
+<meta property="og:title" content="脑机接口会真正提升人类什么?">
+<meta property="og:url" content="https://thefooliman.github.io/2026/04/12/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E4%BC%9A%E7%9C%9F%E6%AD%A3%E6%8F%90%E5%8D%87%E4%BA%BA%E7%B1%BB%E4%BB%80%E4%B9%88/index.html">
 <meta property="og:site_name" content="The Fools&#39; Journey">
-<meta property="og:description" content="​	想写一个很有意思的话题, 补码. ​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了. ​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径. ​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理">
+<meta property="og:description" content="​	这篇主要是一些设想, 实际意义较差, 写个乐呵. ​	先从一个问题开始吧. 假如现在有一个从出生开始就没见过光的盲人, 但是他的想象力非常丰富, 现在你的任务是让他知道颜色这个概念, 就最简单的黑色白色. 可是无论你怎么描述, 他都无法理解你说的是什么.  ​	我们为什么指着天空说天空好蓝指着草地说草地好绿, 是因为我们见过天空和草地, 见过他们的光反射到眼睛里, 有了这个经验. ​	同时还接">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2026-04-02T19:41:21.000Z">
-<meta property="article:modified_time" content="2026-04-02T20:00:32.981Z">
+<meta property="article:published_time" content="2026-04-12T11:59:36.000Z">
+<meta property="article:modified_time" content="2026-04-13T08:36:43.847Z">
 <meta property="article:author" content="thefooliman">
-<meta property="article:tag" content="coding, binary">
+<meta property="article:tag" content="technology, BMI">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
+<link rel="canonical" href="https://thefooliman.github.io/2026/04/12/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E4%BC%9A%E7%9C%9F%E6%AD%A3%E6%8F%90%E5%8D%87%E4%BA%BA%E7%B1%BB%E4%BB%80%E4%B9%88/">
 
 
 <script id="page-configurations">
@@ -47,7 +47,7 @@
   };
 </script>
 
-  <title>浅谈补码 | The Fools' Journey</title>
+  <title>脑机接口会真正提升人类什么? | The Fools' Journey</title>
   
 
 
@@ -153,7 +153,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/12/%E8%84%91%E6%9C%BA%E6%8E%A5%E5%8F%A3%E4%BC%9A%E7%9C%9F%E6%AD%A3%E6%8F%90%E5%8D%87%E4%BA%BA%E7%B1%BB%E4%BB%80%E4%B9%88/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -166,7 +166,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          浅谈补码
+          脑机接口会真正提升人类什么?
         </h1>
 
         <div class="post-meta">
@@ -175,10 +175,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2026-04-02 21:41:21 / Modified: 22:00:32" itemprop="dateCreated datePublished" datetime="2026-04-02T21:41:21+02:00">2026-04-02</time>
+              <time title="Created: 2026-04-12 13:59:36" itemprop="dateCreated datePublished" datetime="2026-04-12T13:59:36+02:00">2026-04-12</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2026-04-13 10:36:43" itemprop="dateModified" datetime="2026-04-13T10:36:43+02:00">2026-04-13</time>
+              </span>
 
           
             <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
@@ -198,15 +204,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>​	想写一个很有意思的话题, 补码.</p>
-<p>​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了.</p>
-<p>​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径.</p>
-<p>​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理加法逻辑, 甚至会造出+0和-0这对双生子. 从现在看来, 或许有时候会想骂一下脑子有泡的原码设计者, 为什么要设计这一个无用的编码方式. 不过想来, 比起1111 1101, 还是1000 0011更加可爱一点.</p>
-<p>​	在韩顺平的java课程中, 我记得韩顺平老师也引入了反码的概念, 先把原码转换成反码, 再把反码转换成补码, 不过《深入理解计算机系统》的视频课程里, 好像没有提到这一点.</p>
-<p>​	我很感叹补码的巧妙, 补码的关键就在于”补“, 就如同一个时钟, 我想从三点拨到两点, 当然可以直接逆时针拨一个小时. 可如果被禁止逆时针拨指针, 也可以顺时针拨十一个小时, 理论上来说会变成十四点, 但是时间超过十二点, 就“爆掉了”, 还是能得到两点. </p>
-<p>​	因此补码运算时, 两个补码相加, 最高溢出的位被巧妙的扔掉了. </p>
-<p>​	这在数学上应该是叫模运算吧. 时钟里, 模是12. 补码里, 对于一个字节, 模是256. </p>
-<p>​	有时也真是感叹, 计算机, 一个完全由人类自己缔造的学问, 竟然如此的精密又广博. </p>
+        <p>​	这篇主要是一些设想, 实际意义较差, 写个乐呵.</p>
+<p>​	先从一个问题开始吧. 假如现在有一个从出生开始就没见过光的盲人, 但是他的想象力非常丰富, 现在你的任务是让他知道颜色这个概念, 就最简单的黑色白色. 可是无论你怎么描述, 他都无法理解你说的是什么. </p>
+<p>​	我们为什么指着天空说天空好蓝指着草地说草地好绿, 是因为我们见过天空和草地, 见过他们的光反射到眼睛里, 有了这个经验.</p>
+<p>​	同时还接受了一套关于这个事物的描述, 经验和描述关联在一起, 下一次我们听到“草地”, 就能想象出那片绿色了.</p>
+<p>​	所以说有一本书叫《假如给我三天光明》, 我觉得不对, 其实《假如给我一分钟光明》就够了, 让盲人看一眼蓝天绿草, 青砖红瓦, 体验一下阳光穿过眼皮留下的红色, 就正式认识了这个世界. </p>
+<p>​	不过这么说是不准确的, 这只是让他们认识了我们的世界, 我们大脑以为的世界. 真实的世界, 没有颜色, 声音, 只是大脑通过五官的输入.</p>
+<p>​	这就来到了这篇博客想提到的关键词, 输入.</p>
+<p>​	大脑真的是很没啥用, 认知到的一切, 无非是把输入, 通过模型计算得出的.</p>
+<p>​	所以没有输入, 再强的计算能力也是没用的. 很多事情是大脑无法理解的.</p>
+<p>​	举个最简单的例子, 四维世界, 哪怕人类把四维世界的投影, 旋转性质研究地再透彻, 也终究无法在大脑中想象四维空间, 一是人类只能通过二维到三维的变化类比三维到四维, 二是大脑本来设计出来就是处理三维世界的, 四维世界他想象不出来.</p>
+<p>​	不说四维世界了, 就说二维世界, 让你变成一个二维生物, 你还是很难想象只有一个方向这个概念的世界是长什么样的, 大多数人脑子中就是一片黑色的幕布, 中间有一根线, 而无法想象出, 整个世界只有”方向“. </p>
+<p>​	这就是问题所在了, 人类无法理解一个概念叫”没有“, 我说这里没有东西, 你可能想象成真空, 但如果连真空都没有呢, 你是不是就想象不出来这是个什么东西了, 所以你会在”方向“旁边填充上一些真空, 因为你不能理解”没有“这个概念.</p>
+<p>​	所以脑机接口, 当然有很多对于他的设想, 比如我们以后可以通过脑机接口学习, 治疗, 头号玩家等等. 但我个人认为, 这是个能提升人类本身的东西, 因为他可以人工给大脑增加多样的输入. 只要人类有人工制造输入的能力. 比如让人类感受一下超声波是个什么声音, 或者让人类体验一下二维世界. </p>
+<p>​	只要给大脑输入一次, 让大脑体验过一次, 对大脑的提升是无可计量的, 大脑会以充分的想象力和计算力, 构建出关于这个输入的一切. </p>
+<p>​	只要有输入.</p>
+<p>​	当然, 我的这个设想还停留在科幻层面, 目前脑机技术还仅仅在起步阶段, 距离我说的, 可能还要个几十年都说不定, 到时候会有什么新的技术突破, 我们拭目以待.</p>
 
     </div>
 
@@ -216,7 +229,7 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/coding-binary/" rel="tag"># coding, binary</a>
+              <a href="/tags/technology-BMI/" rel="tag"># technology, BMI</a>
           </div>
 
         
@@ -225,13 +238,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2026/04/01/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E6%AC%A1vibe-coding%E7%BB%8F%E5%8E%86/" rel="prev" title="我的第一次vibe coding经历">
-      <i class="fa fa-chevron-left"></i> 我的第一次vibe coding经历
+    <a href="/2026/04/12/%E6%B5%85%E8%B0%88ai%E7%9A%84%E2%80%9C%E5%85%88%E5%85%A5%E4%B8%BA%E4%B8%BB%E2%80%9C%E6%80%A7/" rel="prev" title="浅谈ai的“先入为主“性">
+      <i class="fa fa-chevron-left"></i> 浅谈ai的“先入为主“性
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2026/04/03/%E6%88%91%E7%9A%84%E4%BA%BA%E7%94%9F%E8%A7%82/" rel="next" title="我为什么决定当一只鸽子——关于人生观的一点胡思乱想">
-      我为什么决定当一只鸽子——关于人生观的一点胡思乱想 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
