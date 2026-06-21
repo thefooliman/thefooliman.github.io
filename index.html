@@ -157,6 +157,75 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/06/21/%E6%A8%A1%E6%8B%9F%E4%B8%BB%E4%BB%8E%E8%A7%A6%E5%8F%91%E5%99%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="thefooliman">
+      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Fools' Journey">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/06/21/%E6%A8%A1%E6%8B%9F%E4%B8%BB%E4%BB%8E%E8%A7%A6%E5%8F%91%E5%99%A8/" class="post-title-link" itemprop="url">模拟主从触发器</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-06-21 18:30:55 / Modified: 18:38:20" itemprop="dateCreated datePublished" datetime="2026-06-21T18:30:55+02:00">2026-06-21</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>​	今天从油管的科普视频上一连学习了内存, 寄存器, 锁存器, 触发器, 固态硬盘和cpu缓存的原理.</p>
+<p>​	不由得感叹涌现效应(emergency)的伟大, 底层只是电压大小的不同, 只是0和1, 却通过规模的不断放大, 变成了如此智能的东西, 人类的智慧真是可贵.</p>
+<p>​	其他的以前大体都了解过, 只有寄存器完全陌生, 了解了原理觉得挺有趣, 于是动手用python复现了一下基础逻辑.</p>
+<p>​	很长时间不写代码有些生疏了, 如今学校里终于没事了, 又可以重新捡起热爱的东西.</p>
+<p>​	现在对线程, 包括一些默认值的赋值理解出现了一些问题, 还是需要复习的. 学而时习之.</p>
+<p>​	顺手把代码push到了github上</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/thefooliman/ms_trigger_implementation">https://github.com/thefooliman/ms_trigger_implementation</a></p>
+<p>​	代码写的很简陋, 没什么复杂的工业逻辑, 主要就是把basic的逻辑写一下.</p>
+<p>​	比如最开始给master_latch和slave_latch列表的三个元素赋初始值的时候, 我竟然赋了3个None, 如此的低级错误也导致了最开始逻辑跑不通, 后面改成安全处置值F,T,F.</p>
+<p>​	代码这东西, 真是一会儿不写就生疏. 不过还好, 时间还长, 有的是时间磨练.</p>
+<p>​	</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/05/03/%E6%9C%89%E5%9B%BE%E6%9C%89%E7%9C%9F%E7%9B%B8%E7%9A%84%E6%97%B6%E4%BB%A3%E8%BF%87%E5%8E%BB%E4%BA%86-%E8%AF%A5%E5%92%8B%E5%8A%9E/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -861,12 +930,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">9</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
