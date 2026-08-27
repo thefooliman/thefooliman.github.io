@@ -157,6 +157,82 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/08/27/%E8%87%AA%E5%BB%BAopenclaw%E5%A4%9Abot%E7%BE%A4%E8%81%8Askill%E5%A7%8B%E6%9C%AB-%E7%83%82%E5%B0%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="thefooliman">
+      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Fools' Journey">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/08/27/%E8%87%AA%E5%BB%BAopenclaw%E5%A4%9Abot%E7%BE%A4%E8%81%8Askill%E5%A7%8B%E6%9C%AB-%E7%83%82%E5%B0%BE/" class="post-title-link" itemprop="url">自建openclaw多bot群聊skill始末(烂尾)</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-08-27 22:37:54 / Modified: 23:06:15" itemprop="dateCreated datePublished" datetime="2026-08-27T22:37:54+02:00">2026-08-27</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>这两天又想起openclaw了, 于是租了个hetzner的服务器, 2核4G的RAM, 用的还是共享cpu, 0.01欧&#x2F;h, 算下来开一个月就需要7欧多, 也就是将近60块钱, 算不上便宜, 但也在接受范围内, 这也是我目前能找到性价比最高的服务器了.</p>
+<p>花了一整天时间倒腾openclaw, 不得不说, 这玩意的引导做的是真的差, 毕竟是开源项目, openclaw configure命令极其不好用, 必须手动更改~&#x2F;.openclaw&#x2F;openclaw.json文件, 自己nano json文件还很容易出错. (需要去官方文档查keys, values).</p>
+<p>最后整了俩agent, 在qq和telegram都各binding一个bot. 一个是我的main, 一个是专门用来发新闻的.</p>
+<p>我突发奇想, 如果能让我的两个bot拉个群, 大家一起讨论, 协作,脑暴. 或者给每一个bot一个人设, 让他们在群里聊天, 那就非常有意思了. </p>
+<p>于是打算配置一下, 结果发现目前完全不可用, 首先, bot无法接收到bot的信息, 只有user在群组@bot或者私聊才能使用. 其次, 在群聊中, bot也完全无法识别自然语言的call, 必须user显式@. </p>
+<p>那么自然而然的就萌生了自己写一个skills的想法. </p>
+<p>不过一想, 这靠skills里写文字根本没法完成, 因为我需要把bot的话在底层提取并给另一个bot, 这是skill权限之外的事情. </p>
+<p>所以, 最初的想法是通过写一个外部控制器py脚本, 脚本里配置好agent和bot的映射, 接flask库, 用webhook等方式获取并传递信息. 并在后台设置一个锁, 每次只允许一个ai讲话, 讲完随机给另一个bot锁. 并且允许user中途提问补充, 让接下来的bot重点关注user的新input.也允许一个bot指定另一个bot回答</p>
+<p>想法很美好, 实现起来很惨淡. 有一些方法确实很快就完成了, 例如hold lock的方法, send方法, choose-send方法, 以及提示词输送的方法. 不过到后面一看, 最关键的webhook, openclaw并不支持, json中也没这个key. 也没有http事件接口, http轮询也走不通.</p>
+<p>我预想的推送架构完全废掉了.</p>
+<p>到这一步就已经花了将近六七个小时, 官方文档模糊, 问ai又都是早已过时的调用和方法.</p>
+<p>没办法, 只能退而求其次, 至少要跑个mvp出来吧.</p>
+<p>于是想到不通过openclaw进行消息抓取推送, 而是由py完全外包, 接telegram bot 库, openclaw只负责回复并输出到群组. qq先不管了, 想着先跑个mvp出来.</p>
+<p>然后去拿了telegram群组的id, 放了两个测试bot, 然后测试运行.</p>
+<p>你猜这么着, 一直报错, 因为一个bot token有同时调用, 直接被telegram的api拒绝了, 把py的所有后台进程杀了再开还是没用, 那行, 不用nohup, 我在前台运行, 还是不行. 这个bug始终无法修复.</p>
+<p>再加上到这一步, 已经完全写不下去了, 从最开始想着让其他人也能点击即用, 到现在, 我甚至要为每个bot写一个py脚本控制, 然后需要手动更改py里的agent, bot的id, token, 手动发到服务器, 挂到后台, 即使能跑, 也完全丧失了可用性. 只好放弃, 烂尾. openclaw的底层真是限制太多, 可修改度低, 处处受限.</p>
+<p>不过其他的项目还在稳步进行时, seminar arbeit用到的数据模拟py已经快做好一个了, 后面会陆续发在github上.</p>
+<p>另外还打算做一个写论文专用claude code skills, 这次写论文真是折腾死我了, 老师允许用ai进行文本塑造, 毕竟也理解尤其是我们这种非母语者, 不可能手写十几页的学术论文. 但是我把我的德中结合的初稿发给ai每段每段重写润色, 结果ai还给我的写的太好了, ai味太浓. 用的也是deepseek api, 用claude可能会好很多. 让他降低level, 他又说违反学术诚信, 这是真纳闷了, 明明内容本身是我写的啊. 于是只能自己从网上找了个humanizer skill, 当然这种skill claudecode是肯定不会调用的, 我用另一个claudecode把skill内容全部提取成md文件规则, 再发给claudecode让他不要触犯上面的禁止, 并按上面的规则写. 逐章修改, 改完又交给别的ai看, 看看会不会还是ai味太浓, 哪里显得特别有ai味, 在交还给claudecode修改. 如此往复. 所以想着做个skills, 自动化这个流程. 也想帮帮所有有像我一样困境的人, 学校允许用ai, 但是ai生成的文本又太过, 不知道合理的区间到底在哪.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/06/27/%E5%82%BB%E7%93%9C%E7%9A%84%E6%BC%AB%E6%AD%A5%E7%9C%9F%E7%9A%84%E9%9A%8F%E6%9C%BA%E5%90%97/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -855,88 +931,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2025/05/23/My-Thoughts-on-Room-Temperature-Superconductivity/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="thefooliman">
-      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Fools' Journey">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2025/05/23/My-Thoughts-on-Room-Temperature-Superconductivity/" class="post-title-link" itemprop="url">My Thoughts on Room-Temperature Superconductivity</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2025-05-23 19:53:28 / Modified: 19:55:00" itemprop="dateCreated datePublished" datetime="2025-05-23T19:53:28+02:00">2025-05-23</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>As I mentioned in my introductory blog post, I have a deep fascination with cutting-edge technology—especially room-temperature superconductors. In this article, I want to return to the basics and explore the question: <strong>Why do we need room-temperature superconductivity?</strong> Everything here represents my personal perspective, and it may contain errors or one-sided views—thank you for your understanding.</p>
-<p>Throughout history, humanity has gone through several revolutionary breakthroughs.</p>
-<p>It began with the Old Stone Age, a time of primitive productivity where people used chipped stone tools. Men hunted, women cared for children, and tribes wandered in search of survival.</p>
-<p>Later, humanity developed agriculture. We learned to grow crops and raise livestock using water and soil. With the emergence of polished stone tools, pottery, and other inventions, productivity improved significantly. Social classes began to form, and the <strong>Neolithic era</strong> officially began.</p>
-<p>Between 3000 BCE and 1000 BCE, the discovery and smelting of <strong>bronze</strong> marked another major advancement. Bronze tools became widespread. But bronze was still a rare material—and forging it into tools required skilled craftsmen. Not everyone had access to such goods, which led to a “consumption upgrade” and a clearer division of social classes. Civilizations started to emerge, along with rulers and the ruled.</p>
-<p>The next leap came with <strong>iron tools</strong> and the spread of religion.</p>
-<p>But it wasn’t until the <strong>16th century</strong> that humanity truly entered a new era. The Ottoman Empire blocked the land routes between Europe and Asia, forcing Europeans to explore sea routes and ultimately discover the Americas. The Dutch pioneered capitalism, transferring wealth from nobles to merchants. Those merchants, in turn, outsourced manual labor and textile work to England. By the 18th century, <strong>the Industrial Revolution</strong> erupted in Britain. Human productivity skyrocketed.</p>
-<p>What followed is well-known: science advanced rapidly (fueled by better tools and higher productivity), forming the foundation of modern industry.</p>
-<p>The next major revolutions came with <strong>computers</strong>, the <strong>internet</strong>, and now, <strong>artificial intelligence</strong>.</p>
-<p>Yet so far, <strong>AI</strong> has not brought about a transformative leap on the scale of the Industrial Revolution.</p>
-<p>Humanity is yearning for a <strong>breakthrough</strong>—a leap to the next level.</p>
-<p>Even with today’s vast scientific workforce, sophisticated tools, and a flood of publications and ideas, we seem unable to take that crucial next step. Why?</p>
-<p>My answer is: <strong>energy and materials science</strong>.</p>
-<p>Let’s set aside the many emerging and niche fields and look at the three mainstream cutting-edge areas: <strong>Artificial Intelligence, Nuclear Fusion, and Quantum Computing.</strong></p>
-<p>AI depends fundamentally on <strong>computing power</strong>—which can be supercharged by <strong>quantum computing</strong>. But quantum computing itself requires massive amounts of <strong>energy</strong>, which ideally would come from <strong>controlled nuclear fusion</strong>. And with powerful AI, scientific breakthroughs in all domains would accelerate.</p>
-<p>In this way, the three are deeply intertwined. A major breakthrough in any one of them could accelerate progress in the others.</p>
-<p>So where does <strong>room-temperature superconductivity</strong> fit in? Wouldn’t controlled nuclear fusion have an even bigger impact? Why not pour all our resources into fusion?</p>
-<p>In my view, <strong>controlled nuclear fusion</strong> still has a very long road ahead—from theoretical feasibility to practical technology to large-scale application. A <strong>breakthrough within decades</strong> seems unlikely.</p>
-<p>Room-temperature superconductivity, on the other hand, is a more <strong>realistic near-term substitute</strong>. Even if it doesn’t create energy from nothing, it can dramatically <strong>reduce the losses in energy use</strong>.</p>
-<p>Compared to fusion, <strong>superconductivity has a higher starting point</strong>. We already have well-understood theories for <strong>low-temperature superconductors</strong>, and <strong>experimental samples</strong> of <strong>high-temperature superconductors</strong> exist—what’s missing is a solid theoretical explanation. Although there have been theoretical attempts to explain the mechanism of high-temperature superconductivity, a widely accepted unified theory is still lacking</p>
-<p>If theoretical physicists can uncover the mechanisms behind high-temperature superconductors, maybe we can <strong>generalize</strong> the principle and predict materials that are superconductive at room temperature and standard pressure. I don’t know for sure—but I believe this is far more achievable than fusion.</p>
-<p>Also, current research into room-temperature superconductors is somewhat like <strong>alchemy</strong>: experimental physicists try countless combinations of elements, reactions, and tests. This is precisely where <strong>AI</strong> can play a powerful role. With models and computational power, AI could <strong>predict promising materials</strong>, helping us get closer to the real thing.</p>
-<p>While many call this a revolution in <strong>materials science</strong>, I believe it’s more than that—it’s a revolution in <strong>productivity</strong>. Room-temperature superconductors might find common use in power delivery, magnetic levitation, and other applications. But on a deeper level, they could <strong>supercharge our productivity and computing capabilities</strong>, just like the steam engine did in the Industrial Revolution.</p>
-<p>To sum up, I believe <strong>room-temperature superconductivity</strong> is the most achievable breakthrough that can <strong>push humanity to the next stage</strong>. Once realized, it will supercharge AI, quantum computing, and other frontier fields. And perhaps, from that new vantage point, we may finally be able to take on humanity’s ultimate challenge: <strong>controlled nuclear fusion</strong>.</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -1021,12 +1015,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">11</span>
+          <span class="site-state-item-count">12</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-count">14</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
