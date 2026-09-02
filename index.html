@@ -157,6 +157,74 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/09/02/%E5%86%99%E8%AE%BA%E6%96%87agent-mvp%E4%B8%8A%E7%BA%BF%E4%BA%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="thefooliman">
+      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="The Fools' Journey">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2026/09/02/%E5%86%99%E8%AE%BA%E6%96%87agent-mvp%E4%B8%8A%E7%BA%BF%E4%BA%86/" class="post-title-link" itemprop="url">写论文agent mvp上线了</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2026-09-02 21:47:53 / Modified: 22:01:52" itemprop="dateCreated datePublished" datetime="2026-09-02T21:47:53+02:00">2026-09-02</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>起因是学校要求写一篇seminar arbeit, 老师明确告诉我们可以使用ai进行语言构建. 于是在陆陆续续完成数据模拟作为practical的部分, 然后着手开始准备理论部分.</p>
+<p>总体框架不难, 把outline写出来, 然后每一个section逐步把骨架和内容逻辑搭建起来, 能用德语写就用德语写, 不行就中文, 英文, 甚至关键词. 然后把每个section交给ai进行润色, 变成完整的学术德语. </p>
+<p>但是ai写的东西毕竟还是ai味太浓, 我也并不确定我们老师对于“ai润色”的尺度把控到底有多严重, 如果用专业aigc网站打分, 那一定是非常高的, 因为语言基本都是ai润色过或者改写过的. 这点我相信老师是完全可以理解的. 不过, 我还是把这篇论文初稿给别的ai进行“ai率点评”, 以尽量减少阅读体验上的ai感痕迹.  把别的ai总结的特征, 让帮我进行润色改写的ia进行修改. </p>
+<p>这一步来回做了很多次, 但始终问题没有改善太多, 一是十几页的论文, ai最多也就改个几处. 不可能通篇修改. 二是, 再怎么让他不要这么写, 他也无法跳脱底层限制, 终究还是相似的写法. 所以唯一解就是通过固定的pattern.md, 把所有要求和禁忌写清楚, 写详细, 让他严格执行, 自我检查, 并且继续让外部ai进行检查. </p>
+<hr>
+<p>好吧, 以上只是前情提要, 我干完这个累活, 就想着要把这件事给自动化了, 载体当然是老朋友claude code.</p>
+<p>于是把我写论文时完整的工作流, 从接取用户输入, 到根据patterns写作&#x2F;改写, 到全局guard检测合法性, 正确性, 到自检子agent自行检测patterns是否都被符合, 到外部子agent进行外部评估, 然后改写agent继续根据guard+自检+外部子agent的综合评估进行改写, 并将以上的逻辑迭代多次, 直到用户觉得满意. </p>
+<p>还整了个普通模式和激进模式.</p>
+<p>目前还是mvp, 还有很多可以优化的地方,  比如是否要引入外部aigc来专业对ai率进行评测, 直到某个数值下才停止迭代, 这一步实现较困难且容易陷入迭代死循环. 包括很多具体逻辑可能还存在漏洞, 我目前也只是跑了2篇小型论文进行了测试. 不过确实是完整可以跑了.</p>
+<p>后续可以进一步支持中文, 做好主页包装, 发到marketplace, 引流, 支持codex, 支持德语等等, 有很多可以做, 不过目前还是首要确保整体功能的完整性.</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/08/29/%E7%88%86%E8%82%9D%E4%B8%80%E4%B8%AA%E6%9C%88%E7%BB%88%E4%BA%8E%E6%8B%BF%E5%88%B0coursera%E7%AE%97%E6%B3%95%E8%AF%81%E4%B9%A6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -836,73 +904,6 @@
   
   
 
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://thefooliman.github.io/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="thefooliman">
-      <meta itemprop="description" content="A curious student's journey through computing, physics, and the unknown. Insipired by the spirit of the Fool: to leap, to explore, to learn.">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="The Fools' Journey">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2026/04/02/%E6%B5%85%E8%B0%88%E8%A1%A5%E7%A0%81/" class="post-title-link" itemprop="url">浅谈补码</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2026-04-02 21:41:21 / Modified: 22:00:32" itemprop="dateCreated datePublished" datetime="2026-04-02T21:41:21+02:00">2026-04-02</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>​	想写一个很有意思的话题, 补码.</p>
-<p>​	最早看到这个名词,是三年前自学韩顺平老师的java课程中学到的, 当时也浅浅地讲了位运算, 原码, 反码和补码的内容. 不过当时觉得并没有什么用, 练了练计算方式, 就把这个名词忘记了.</p>
-<p>​	如今三年过去, 数理储备增进了一步, 在《深入理解计算机系统》里, 重新看到这个词, 又有新的理解路径.</p>
-<p>​	所谓补码, 无非是弥补当年设计原码的漏洞. 原码只能处理加法逻辑, 甚至会造出+0和-0这对双生子. 从现在看来, 或许有时候会想骂一下脑子有泡的原码设计者, 为什么要设计这一个无用的编码方式. 不过想来, 比起1111 1101, 还是1000 0011更加可爱一点.</p>
-<p>​	在韩顺平的java课程中, 我记得韩顺平老师也引入了反码的概念, 先把原码转换成反码, 再把反码转换成补码, 不过《深入理解计算机系统》的视频课程里, 好像没有提到这一点.</p>
-<p>​	我很感叹补码的巧妙, 补码的关键就在于”补“, 就如同一个时钟, 我想从三点拨到两点, 当然可以直接逆时针拨一个小时. 可如果被禁止逆时针拨指针, 也可以顺时针拨十一个小时, 理论上来说会变成十四点, 但是时间超过十二点, 就“爆掉了”, 还是能得到两点. </p>
-<p>​	因此补码运算时, 两个补码相加, 最高溢出的位被巧妙的扔掉了. </p>
-<p>​	这在数学上应该是叫模运算吧. 时钟里, 模是12. 补码里, 对于一个字节, 模是256. </p>
-<p>​	有时也真是感叹, 计算机, 一个完全由人类自己缔造的学问, 竟然如此的精密又广博. </p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
 
   
   <nav class="pagination">
@@ -987,12 +988,12 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">13</span>
+          <span class="site-state-item-count">14</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
-        <span class="site-state-item-count">15</span>
+        <span class="site-state-item-count">16</span>
         <span class="site-state-item-name">tags</span>
       </div>
   </nav>
