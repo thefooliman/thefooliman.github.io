@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://thefooliman.github.io/2026/10/26/%E5%BE%B7%E5%9B%BD%E8%BF%98%E8%83%BD%E4%B8%8D%E8%83%BD%E6%90%AD%E4%B8%8Aai%E8%BF%99%E7%8F%AD%E8%BD%A6/</loc>
+    
+    <lastmod>2026-10-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://thefooliman.github.io/2026/09/02/%E5%86%99%E8%AE%BA%E6%96%87agent-mvp%E4%B8%8A%E7%BA%BF%E4%BA%86/</loc>
     
     <lastmod>2026-09-02</lastmod>
@@ -130,120 +139,120 @@
 
   <url>
     <loc>https://thefooliman.github.io/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
-    <loc>https://thefooliman.github.io/tags/introduction/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://thefooliman.github.io/tags/personal/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://thefooliman.github.io/tags/computer-science/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://thefooliman.github.io/tags/physics/</loc>
-    <lastmod>2026-09-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://thefooliman.github.io/tags/economy-trade/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/Claude-code-humanizer/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/ai-technology/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/coding-technology/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/introduction/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94-life/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/personal/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/Claude-code-humanizer/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/computer-science/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/Room-Temperature-Superconductivity/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/physics/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/openclaw-agent-ai/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/%E9%9A%8F%E7%AC%94-life/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/economy-trade/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/Room-Temperature-Superconductivity/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/coding-binary/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://thefooliman.github.io/tags/coursera-algorithm/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <loc>https://thefooliman.github.io/tags/coding-technology/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/technology-BMI/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/openclaw-agent-ai/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://thefooliman.github.io/tags/coursera-algorithm/</loc>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://thefooliman.github.io/tags/thoughts/</loc>
-    <lastmod>2026-09-02</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
